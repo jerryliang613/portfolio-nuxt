@@ -4,15 +4,15 @@ const routes = [
     name: "Home"
   },
   {
-    path: "/projects",
+    path: "/Projects",
     name: "Projects"
   },
   {
-    path: "/profile",
+    path: "/Profile",
     name: "Profile"
   },
   {
-    path: "/contact",
+    path: "/Contact",
     name: "Contact"
   }
 ];
