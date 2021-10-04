@@ -1,5 +1,14 @@
 import colors from "vuetify/es5/util/colors";
 
+const routerBase =
+  process.env.DEPLOY_ENV === "GH_PAGES"
+    ? {
+        router: {
+          base: "/<repository-name>/"
+        }
+      }
+    : {};
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -38,12 +47,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
-  router:
-    process.env.DEPLOY_ENV === "GH_PAGES"
-      ? {
-          base: " portolio-nuxt"
-        }
-      : {},
+  ...routerBase,
 
   pwa: {
     icon: {
