@@ -37,16 +37,29 @@
         >
         <v-col sm="8" cols="12"
           ><v-card flat class="profile">
-            <p class="text-justify body-2 profile">
-              I am a web developer with good knowledge of front-end techniques.
-              Love structure and order with quality. Love spending time on
-              fixing details and optimizing webs. Can work independently and be
-              a good team player as well. Excellent time mangement ablity and be
-              able to work well under pressure. A fast hand and a quick learner
-              with ‘can do and no problem’ attitude. Qualification Certificate
-              of Computer and Software Technology Proficiency
-            </p></v-card
-          ></v-col
+            <v-card
+              flat
+              class="pb-3"
+              v-for="(experience, index) in experiences"
+              :key="index"
+            >
+              <v-card-title class="pa-0 pt-1 ma-0 body-2 font-weight-medium">{{
+                experience.title
+              }}</v-card-title>
+              <v-card-subtitle class="font-italic ma-0 pa-0 pb-2">{{
+                experience.duration
+              }}</v-card-subtitle>
+              <ul
+                v-for="(detail, index) in experience.details"
+                :key="index"
+                class="text-justify body-2 profile pl-3"
+              >
+                <li>
+                  {{ detail }}
+                </li>
+              </ul>
+            </v-card>
+          </v-card></v-col
         >
       </div>
 
@@ -106,7 +119,45 @@ export default {
   data: () => ({
     bottom: false,
     knowledgeBar: false,
-    SKILLS
+    SKILLS,
+    experiences: [
+      {
+        title: "Web Developer",
+        duration: "Freelancer/Contractor, Melbourne, Vic 2014 - present",
+        details: [
+          "Developed full-stack web applications which processed, analyzed, and rendered data visually.",
+          "Liaised with back end developers, front end developers, and CTO as needed.",
+          "Managed time-sensitive updates, including content changes and database upgrades."
+        ]
+      },
+      {
+        title: "Helpdesk/Administrator",
+        duration: "Digital2 Computer, Melbourne, Vic 2008 - 2013",
+        details: [
+          "Installed, configured, backed up and recovered the PC systems.",
+          "Provided desktop, configuration, software and hardware support as required.",
+          "Set up secure WiFi, LAN networks, client/server configuration and performance-tuning of crucial infrastructure to ensure business operations."
+        ]
+      },
+      {
+        title: "Software Engineer",
+        duration: "ASE, Shanghai, China 2003 - 2007",
+        details: [
+          "Developed full-stack web applications which processed, analyzed, and rendered data visually.",
+          "Liaised with colleagues, quality assurance testers, and CTO as needed.",
+          "Planned, wrote, and debugged web applications and software with complete accuracy."
+        ]
+      },
+      {
+        title: "Helpdesk/Tutor",
+        duration: "WUZI Colledge, Shanghai, China 2000 - 2003",
+        details: [
+          "Installed, configured, backed up and recovered the PC systems.",
+          "Provided desktop, configuration, software and hardware support school-wide as required.",
+          "Tutor students in Html/Office."
+        ]
+      }
+    ]
   }),
   mounted() {
     document.addEventListener("scroll", this.onScroll);

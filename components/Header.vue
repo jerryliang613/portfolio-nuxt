@@ -1,7 +1,12 @@
 <template>
   <nav>
     <v-app-bar app flat clipped-left style="z-index: 99; height:64px">
-      <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-hover v-slot="{ hover }" open-delay="200"
+        ><v-app-bar-nav-icon
+          :class="{ 'on-hover': hover }"
+          @click="drawer = !drawer"
+        ></v-app-bar-nav-icon
+      ></v-hover>
       <v-spacer></v-spacer>
       <v-toolbar-title
         class="text-uppercase"
@@ -10,9 +15,16 @@
           left: 'calc(50% - 104px)',
           'letter-spacing': '0.5rem'
         }"
-      >
-        <span class="font-weight-light">Jerry </span>
-        <span>Liang</span></v-toolbar-title
+        ><v-hover v-slot="{ hover }"
+          ><a
+            :class="{ 'on-hover': hover }"
+            style="text-decoration: none; color: inherit;"
+            href="/"
+          >
+            <span class="font-weight-light">Jerry </span>
+            <span>Liang</span></a
+          ></v-hover
+        ></v-toolbar-title
       >
       <!-- <v-spacer class="d-none d-sm-flex"></v-spacer> -->
       <sociallinks />
@@ -85,11 +97,6 @@
         @click="clearFilters"
         ><v-icon>mdi-trash-can-outline</v-icon></v-btn
       >
-      <!-- <div class="pa-2 mt-6 text-center">
-        <v-btn @click="handleClose">
-          close
-        </v-btn>
-      </div> -->
     </v-navigation-drawer>
   </nav>
 </template>
@@ -152,3 +159,29 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+.v-app-bar__nav-icon {
+  transition: all 0.4s ease-in-out;
+}
+.v-app-bar__nav-icon.on-hover {
+  opacity: 0.4;
+}
+
+.v-toolbar__title {
+  a::after {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    content: "";
+    height: 1.5px;
+    width: 0;
+    display: block;
+    background-color: black;
+    transition: width 1s ease-in-out;
+  }
+  a.on-hover::after {
+    width: 110%;
+    left: 0;
+  }
+}
+</style>
