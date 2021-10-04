@@ -39,6 +39,16 @@
 import { mapGetters } from "vuex";
 
 export default {
+  head: {
+    title: "Jerry Liang - Projects",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Projects I have done. Frontend/backend"
+      }
+    ]
+  },
   computed: {
     ...mapGetters({
       projects: "PROJECTS",

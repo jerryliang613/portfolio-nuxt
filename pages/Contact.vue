@@ -56,10 +56,20 @@
 <script>
 const PHPMAILER = "http://jerryliang.co/sendmail/phpMail.php?";
 export default {
+  head: {
+    title: "Jerry Liang - Contact",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "Send me a message if you have any questions."
+      }
+    ]
+  },
   watch: {
     snackbar: function(value) {
       if (!value) this.sent = value;
-    },
+    }
   },
   methods: {
     submit: function() {
@@ -99,7 +109,7 @@ export default {
           "&message=" +
           this.message
       );
-    },
+    }
   },
   data: () => ({
     sent: false,
@@ -109,19 +119,18 @@ export default {
     timeout: 2000,
     notification: "Message has been sent succussfully.",
     name: "",
-    nameRules: [(v) => !!v || "Name is required"],
+    nameRules: [v => !!v || "Name is required"],
     email: "",
     emailRules: [
-      (v) => !!v || "E-mail is required",
-      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+      v => !!v || "E-mail is required",
+      v => /.+@.+\..+/.test(v) || "E-mail must be valid"
     ],
     message: "",
     messageRules: [
-      (v) => !!v || "Message is required",
-      (v) =>
-        (v && v.length > 10) || "Message can not be less than 10 characters",
-    ],
-  }),
+      v => !!v || "Message is required",
+      v => (v && v.length > 10) || "Message can not be less than 10 characters"
+    ]
+  })
 };
 </script>
 

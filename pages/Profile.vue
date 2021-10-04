@@ -116,6 +116,16 @@
 <script>
 import { SKILLS } from "../config";
 export default {
+  head: {
+    title: "Jerry Liang - Profile",
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: "work experience, education, certification, skills"
+      }
+    ]
+  },
   data: () => ({
     bottom: false,
     knowledgeBar: false,
