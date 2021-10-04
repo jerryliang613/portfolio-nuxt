@@ -39,6 +39,7 @@
 import { mapGetters } from "vuex";
 
 export default {
+  name: "Projects",
   head: {
     title: "Jerry Liang - Projects",
     meta: [

@@ -8,18 +8,11 @@
       ><span>g</span>
     </h1>
     <h3 class="white--text font-weight-light jerry2">Web Developer</h3>
-    <v-btn
-      class="start"
-      outlined
-      fab
-      text
-      fixed
-      bottom
-      color="white"
-      href="/Projects"
+    <nuxt-link to="/Projects">
+      <v-btn class="start" outlined fab text fixed bottom color="white">
+        <v-icon>mdi-chevron-double-down</v-icon>
+      </v-btn></nuxt-link
     >
-      <v-icon>mdi-chevron-double-down</v-icon>
-    </v-btn>
   </v-container>
 </template>
 
