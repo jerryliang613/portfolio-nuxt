@@ -19,18 +19,17 @@
           ><a
             :class="{ 'on-hover': hover }"
             style="text-decoration: none; color: inherit;"
-            href="/"
+            href="https://jerryliang613.github.io/portfolio-nuxt"
           >
             <span class="font-weight-light">Jerry </span>
             <span>Liang</span></a
           ></v-hover
         ></v-toolbar-title
       >
-      <!-- <v-spacer class="d-none d-sm-flex"></v-spacer> -->
       <sociallinks />
       <v-btn
         text
-        v-if="this.$route.path == '/Projects'"
+        v-if="this.$route.path == '/projects'"
         @click="searchDrawer = !searchDrawer"
       >
         <v-icon>
@@ -58,7 +57,7 @@
     >
 
     <v-navigation-drawer
-      v-if="this.$route.path == '/Projects'"
+      v-if="this.$route.path == '/projects'"
       mobile-breakpoint="0"
       v-model="searchDrawer"
       app
