@@ -1,5 +1,5 @@
 <template>
-  <div :class="this.$route.path == '/projects' ? ['d-none', 'd-sm-flex'] : []">
+  <div :class="this.$route.path == '/Projects' ? ['d-none', 'd-sm-flex'] : []">
     <v-btn
       v-for="(link, index) in socialLinks"
       :key="index"
@@ -25,15 +25,15 @@ export default {
       {
         name: "github",
         link: "https://github.com/jerryliang613",
-        icon: "mdi-github",
+        icon: "mdi-github"
       },
       {
         name: "github",
         link: "https://stackoverflow.com/users/14391878/jerry",
-        icon: "mdi-stack-overflow",
-      },
-    ],
-  }),
+        icon: "mdi-stack-overflow"
+      }
+    ]
+  })
 };
 </script>
 
