@@ -16,7 +16,7 @@
       fixed
       bottom
       color="white"
-      href="/projects"
+      href="/Projects"
     >
       <v-icon>mdi-chevron-double-down</v-icon>
     </v-btn>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: "Home",
+  name: "Home"
 };
 </script>
 

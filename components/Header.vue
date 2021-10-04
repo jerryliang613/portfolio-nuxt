@@ -30,7 +30,7 @@
       <sociallinks />
       <v-btn
         text
-        v-if="this.$route.path == '/projects'"
+        v-if="this.$route.path == '/Projects'"
         @click="searchDrawer = !searchDrawer"
       >
         <v-icon>
@@ -58,7 +58,7 @@
     >
 
     <v-navigation-drawer
-      v-if="this.$route.path == '/projects'"
+      v-if="this.$route.path == '/Projects'"
       mobile-breakpoint="0"
       v-model="searchDrawer"
       app
@@ -103,13 +103,10 @@
 
 <script>
 import { mapGetters } from "vuex";
-// import Sociallinks from "./Sociallinks.vue";
 
 export default {
   name: "Header",
-  // components: {
-  //   Sociallinks,
-  // },
+
   props: ["routers"],
   computed: {
     ...mapGetters(["PROJECTS", "FILTERS", "SELECTED_FILTERS"]),
