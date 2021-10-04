@@ -38,6 +38,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [],
+  router:
+    process.env.DEPLOY_ENV === "GH_PAGES"
+      ? {
+          base: " portolio-nuxt"
+        }
+      : {},
 
   pwa: {
     icon: {
